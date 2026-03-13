@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web OS - Desktop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div id="Desktop">
+        <div class="box" id="Header" style="grid-area: box-1">Web OS</div>
+        <div class="box" id="Wallpaper" style="grid-area: box-2">
+            <!-- Calendar -->
+            <div id="CalendarModal" class="Modal">
+                <div class="calendar">
+                    <div class="header calendarHeader">
+                        <button id="prevBtn" class="navBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="centerHeader">
+                            <span id="monthYear" class="monthText"></span>`
+                            <select id="yearSelect" class="yearSelect"></select>
+                            <button id="todayBtn" class="todayIconBtn" title="Go to Today"><i class="fa-solid fa-bullseye"></i></button>
+                        </div>
+                        <button id="nextBtn" class="navBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="days">
+                        <div class="day">Sun</div>
+                        <div class="day">Mon</div>
+                        <div class="day">Tue</div>
+                        <div class="day">Wed</div>
+                        <div class="day">Thu</div>
+                        <div class="day">Fri</div>
+                        <div class="day">Sat</div>
+                    </div>
+                    <div class="dates" id="dates"></div>
+                </div>
+            </div>
+            <div id="DesktopIcons">
+                <div class="desktop-icon" id="d1" class="app-window">
+                    <img src="./assets/icons/desktop_notes.png" alt="Notes">
+                    <span>Notes</span>
+                </div>
+                <div class="desktop-icon" id="d4" class="app-window">
+                    <img src="./assets/icons/desktop_calender.png" alt="Calendar">
+                    <span>Calendar</span>
+                </div>
+                <div class="desktop-icon" id="d2" class="app-window">
+                    <img src="./assets/icons/desktop_todo.png" alt="Todo">
+                    <span>Todo</span>
+                </div>
+                <div class="desktop-icon" id="d3" class="app-window">
+                    <img src="./assets/icons/desktop_music.png" alt="Music">
+                    <span>Music</span>
+                </div>
+            </div>
+
+            <!-- Music Player -->
+            <div id="MusicPlayerModal" class="MusicModal">
+                <div id="Music-Container">
+                    <div id="Music-Header">
+                        <h3>Music</h3><img id="CloseBtn" src="./assets/icons/close.png" alt="Close">
+                    </div>
+                    <div id="Music-Container-Body">
+                        <div id="Music-Category">
+                            <button id="UploadMusicBtn" class="Music-Cate-Btns">Upload Music</button>
+                            <button id="TamilSongsBtn" class="Music-Cate-Btns">Tamil Songs</button>
+                            <button id="EnglishSongsBtn" class="Music-Cate-Btns">English Songs</button>
+                        </div>
+                        <div id="Music-Body">
+                            <div id="UploadMusic" class="MB-Items">
+                                <label for="musicUpload">
+                                    <img id="UploadMusicIcon" src="./assets/icons/upload-music.png" alt="Upload music" />
+                                </label>
+                                <input type="file" id="musicUpload" accept="audio/*" style="display: none;" />
+                            </div>
+                            <div id="TamilSongs" class="MB-Items">
+                                <p class="TS-Items" data-src="./assets/songs/Enakke-Enakkaa.mp3"><span><img
+                                            class="SongLogos"
+                                            src="./assets/images-videos/TamilMusicLogos/Enakke-Enakkaa.jpeg"></span>
+                                    Enakke Enakkaa</p>
+
+                                <p class="TS-Items" data-src="./assets/songs/Thendral-Vandhu-Theendum-Pothu.mp3">
+                                    <span><img class="SongLogos"
+                                            src="./assets/images-videos/TamilMusicLogos/Thendral-Vandhu-Theendumbothu.jpeg"></span>
+                                    Thendral Vandhu Theendumbothu
+                                </p>
+
+                                <p class="TS-Items" data-src="./assets/songs/Nanare.mp3"><span><img class="SongLogos"
+                                            src="./assets/images-videos/TamilMusicLogos/Nannare.jpeg"></span> Nannare
+                                </p>
+
+                                <p class="TS-Items" data-src="./assets/songs/Sara-Sara-Saara-Kathu.mp3"><span><img
+                                            class="SongLogos"
+                                            src="./assets/images-videos/TamilMusicLogos/Sara-Sara-Saara-Kathu.jpeg"></span>
+                                    Sara Sara Saara Kathu</p>
+
+                                <p class="TS-Items" data-src="./assets/songs/Elangaathu-Veesudhey.mp3"><span><img
+                                            class="SongLogos"
+                                            src="./assets/images-videos/TamilMusicLogos/Elangathu.jpeg"></span>
+                                    Elangathu</p>
+                            </div>
+
+                            <div id="EnglishSongs" class="MB-Items">
+                                <p class="ES-Items" data-src="./assets/songs/Shape-of-You.mp3"><span><img
+                                            class="SongLogos"
+                                            src="./assets/images-videos/EnglishMusicLogos/ShapeOfYou-Logo.jpeg"></span>
+                                    Shape of You</p>
+
+                                <p class="ES-Items" data-src="./assets/songs/Blinding-Lights.mp3"><span><img
+                                            class="SongLogos"
+                                            src="./assets/images-videos/EnglishMusicLogos/BlindingLights-Logo.jpg"></span>
+                                    Blinding Lights</p>
+
+                                <p class="ES-Items" data-src="./assets/songs/Until-I-Found-You.mp3"><span><img
+                                            class="SongLogos"
+                                            src="./assets/images-videos/EnglishMusicLogos/UntilIFoundYou-Logo.jpeg"></span>
+                                    Until I Found You</p>
+
+                                <p class="ES-Items" data-src="./assets/songs/Waka-Waka.mp3"><span><img class="SongLogos"
+                                            src="./assets/images-videos/EnglishMusicLogos/WakaWaka-Logo.jpeg"></span>
+                                    Waka Waka</p>
+
+                                <p class="ES-Items" data-src="./assets/songs/7-Years.mp3"><span><img class="SongLogos"
+                                            src="./assets/images-videos/EnglishMusicLogos/7Years-Logo.jpeg"></span> 7
+                                    Years</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Music-Controls">
+                        <audio id="M-Control" controls></audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Screen -->
+            <div id="SettingsModal" class="SettingsModal">
+                <div id="Settings-Container">
+                    <div id="Settings-Grid">
+                        <div id="Sett-Header">
+                            <h2>Settings</h2><img id="Sett-CloseBtn" src="./assets/icons/close.png" alt="Close"
+                                style="cursor: pointer; width: 24px;">
+                        </div>
+                        <div id="Sett-SideBar">
+                            <div id="WallpaperBtn" class="SSB-Items">Wallpaper</div>
+                            <div id="ThemeBtn" class="SSB-Items">Theme</div>
+                            <div id="Fontstn" class="SSB-Items">Fonts</div>
+                        </div>
+                        <div id="Sett-Main">
+                            <div id="WallpaperDiv">
+                                <img class="Wallpapers" src="./assets/backgrounds/wallpaper1.jpg" alt="wallpaper1">
+                                <img class="Wallpapers" src="./assets/backgrounds/wallpaper2.jpeg" alt="wallpaper2">
+                                <img class="Wallpapers" src="./assets/backgrounds/wallpaper3.jpeg" alt="wallpaper3">
+                                <img class="Wallpapers" src="./assets/backgrounds/wallpaper4.jpeg" alt="wallpaper4">
+                                <img class="Wallpapers" src="./assets/backgrounds/wallpaper5.jpeg" alt="wallpaper5">
+                                <button id="SaveWallpaperBtn">Save Wallpaper</button>
+                            </div>
+
+                            <div id="ThemeDiv">
+                                <button id="SaveThemeBtn">Save Theme</button>
+                                <div id="Themes">
+                                    <div id="LightTheme" class="ThemesItems">
+                                        Light Theme
+                                    </div>
+                                    <div id="DarkTheme" class="ThemesItems">
+                                        Dark Theme
+                                    </div>
+                                    <div id="ColorTheme1" class="ThemesItems">
+                                        Color Theme 1
+                                    </div>
+                                    <div id="ColorTheme2" class="ThemesItems">
+                                        Color Theme 2
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="FontsDiv">
+                                <button id="SaveFontBtn">Save Theme</button>
+                                <div id="FontItems">
+                                    <h2 id="fontstyle1" class="FontItmes">This is Fontstyle 1</h2>
+                                    <h2 id="fontstyle2" class="FontItmes">This is Fontstyle 2</h2>
+                                    <h2 id="fontstyle3" class="FontItmes">This is Fontstyle 3</h2>
+                                    <h2 id="fontstyle4" class="FontItmes">This is Fontstyle 4</h2>
+                                    <h2 id="fontstyle5" class="FontItmes">This is Fontstyle 5</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Menu -->
+            <div id="Start-Menu-Container" class="Start-Menu" hidden>
+                <div id="SMItmes">
+                    <div id="SM1" class="SM-Items">Notes</div>
+                    <div id="SM2" class="SM-Items">To-do</div>
+                    <div id="SM3" class="SM-Items">Music</div>
+                    <div id="SM4" class="SM-Items">Calendar</div>
+                    <div id="SM5" class="SM-Items">Settings</div>
+                </div>
+            </div>
+
+            <!-- Notes App -->
+            <div id="NotesApp" class="NotesModal" hidden>
+                <header class="header">
+                    <h1 class="h1-note">Notes App</h1>
+                    <div>
+                        <button class="add-note-btn" onclick="openNoteDialog()">+ Add Note</button>
+                        <button id="btn" class="back-to-home"> ← Back To Home</button>
+                    </div>
+                </header>
+
+                <main id="notesContainer" class="notes-grid">
+                </main>
+
+                <dialog id="noteDialog">
+                    <div class="dialog-content">
+                        <div class="dialog-header">
+                            <h2 class="dialog-title" id="dialogTitle"></h2>
+                            <button class="close-btn" onclick="closeNoteDialog()">X</button>
+                        </div>
+                        <form id="noteForm">
+                            <div class="form-group">
+                                <label for="noteTitle" class="form-label">Title :</label>
+                                <input type="text" id="noteTitle" class="form-input" placeholder="Enter Note Title..."
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="noteContent" class="form-label">Content :</label>
+                                <textarea id="noteContent" class="form-textarea" placeholder="Write Your Note Here..."
+                                    required></textarea>
+                            </div>
+                            <div class="dialog-actions">
+                                <button type="button" class="cancel-btn" onclick="closeNoteDialog()">Cancel</button>
+                                <button type="submit" class="save-btn">Save Note</button>
+                            </div>
+                        </form>
+                    </div>
+                </dialog>
+            </div>
+
+            <!-- To Do App -->
+            <div id="TodoApp" class="TodoModal" hidden>
+                <div class="container">
+                    <div class="todo-app">
+                        <h2>To-Do List</h2>
+                        <button id="TodoClose">X</button>
+                        <p id="task-status" class="noTask"></p>
+                        <div class="row">
+                            <input class="input-text" type="text" id="input-box" placeholder="Add The Task">
+                            <button class="add-btn" onclick="addTask()">Add</button>
+                        </div>
+                        <ul id="list-container">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taskbar -->
+        <div class="box" id="Taskbar" style="grid-area: box-3">
+            <div class="leftAllign">
+                <img id="start-menu" src="./assets/icons/start-menu.png" height="30" alt="start-menu icon">
+
+                <div id="TaskbarShortcuts">
+                    <div id="ts1" class="tsItems">
+                        <img src="./assets/icons/notes.png" height="20" alt="Notes" style="padding-right: 2px;">Notes
+                    </div>
+                    <div id="ts2" class="tsItems">
+                        <img src="./assets/icons/check.png" height="20" alt="Todo" style="padding-right: 2px;">Todo
+                    </div>
+                    <div id="ts3" class="tsItems">
+                        <img src="./assets/icons/music.png" height="20" alt="Music" style="padding-right: 2px;">Music
+                    </div>
+                    <div id="ts4" class="tsItems">
+                        <img src="./assets/icons/calendar.png" height="20" alt="Calendar" style="padding-right: 2px;">Calendar
+                    </div>
+                    <div id="ts5" class="tsItems">
+                        <img src="./assets/icons/settings.png" height="20" alt="Settings" style="padding-right: 2px;">Settings
+                    </div>
+                </div>
+            </div>
+            <div id="clock">
+                <div id="ts6" class="clock">
+                    <img src="./assets/icons/clock.png" class="clock-img"><span id="clock-count"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/system.js" charset="UTF-8"></script>
+</body>
+</html>
