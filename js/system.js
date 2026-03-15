@@ -608,3 +608,43 @@ list.addEventListener(
   },
   false,
 );
+
+const mobileMenuBtn = document.getElementById("MobileMenuBtn");
+const mobileNav = document.getElementById("MobileNavMenu");
+
+mobileMenuBtn.onclick = () => {
+  if (mobileNav.style.display === "flex") {
+    mobileNav.style.display = "none";
+  } else {
+    mobileNav.style.display = "flex";
+  }
+};
+
+function closeMobileMenu(){
+  mobileNav.style.display = "none";
+}
+
+document.getElementById("m1").onclick = () => {
+  document.getElementById("ts1").click();
+  closeMobileMenu();
+};
+
+document.getElementById("m2").onclick = () => {
+  document.getElementById("ts2").click();
+  closeMobileMenu();
+};
+
+document.getElementById("m3").onclick = () => {
+  document.getElementById("ts3").click();
+  closeMobileMenu();
+};
+
+document.getElementById("m4").onclick = () => {
+  document.getElementById("ts4").click();
+  closeMobileMenu();
+};
+
+document.getElementById("m5").onclick = () => {
+  document.getElementById("ts5").click();
+  closeMobileMenu();
+};
