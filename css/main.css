@@ -20,7 +20,7 @@ body {
 
 #Desktop {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   display: grid;
   grid-template-rows: 6vh 89vh 5vh;
   grid-template-areas: "box-1" "box-2" "box-3";
@@ -1189,4 +1189,46 @@ ul li span:hover {
 
 #Wallpaper {
   position: relative;
+}
+
+#MobileMenuBtn {
+  display: none;
+}
+@media (max-width:768px) {
+  #Taskbar {
+    display: none;
+  }
+
+  #MobileMenuBtn {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  #MobileNavMenu {
+    position: fixed;
+    top: 55px;
+    right: 10px;
+    width: 160px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+  }
+
+  #MobileNavMenu div {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+
+  #MobileNavMenu div:hover {
+    background: #eee;
+  }
 }
